@@ -1,0 +1,357 @@
+.container {
+}
+
+#heading {
+  background-color: #303183;
+}
+.logo{
+  height: auto;
+  max-height: 60px;
+  width: auto;
+  max-width: 60px;
+ 
+}
+
+#header {
+  font-family: Langar;
+  font-size: 150%;
+  font-style: italic;
+  color: white;
+ 
+}
+#menu {
+  font-weight: bold;
+  font-size: small;
+  font-family: "Aclonica";
+  margin-right: 20px;
+}
+#menu a {
+  font-size: small;
+  color: #f6fcfd;
+  padding: 10px;
+  transition-property: border-radius;
+ 
+ 
+}
+#menu a:hover {
+  
+ 
+  text-decoration: none;
+  color:#5154dd;
+  
+}
+
+#toggler {
+  color: #303183;
+ 
+}
+
+.login {
+  background-image: linear-gradient( -40deg, #303183  50% ,#1a1346  );
+  color: rgb(255, 255, 255);
+  padding: 6px;
+
+  text-decoration: none;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: smaller;
+  border-radius: 15px;
+}
+.login :hover{
+text-decoration: none;
+
+}
+.login:active{
+  
+ text-decoration: none;
+
+  
+
+}
+
+
+#row1 {
+ background-image: url("Background 18.jpg");
+ 
+ 
+
+}
+#rowa{
+
+ 
+}
+.try1{
+  height: auto;
+
+  width: 100%;
+  max-width: 500px;
+
+}
+
+.try2{
+  height: auto;
+
+  width: 100%;
+  max-width: 460px;
+
+}
+
+#resolve{
+font-size: medium;
+color: rgb(247, 245, 245);
+
+}
+
+@media screen and (max-width: 600px) {
+  #resolve p{
+    font-size: 15px;
+    margin-bottom:-50px;
+   
+  }
+
+
+  .try1{
+    height: auto;
+  
+    width: 100%;
+    max-width: 250px;
+  
+  }
+  
+  .try2{
+    
+    height: auto;
+    
+    width: 100%;
+    max-width: 250px;
+    margin-left: 105px;
+     }
+  
+
+
+}
+
+#img1 {
+  background-color: #303183;
+  
+  color:white;
+  height: auto;
+  width: 100%;
+  max-width: 1000px;
+}
+/*@media only screen and (min-width: 772px){
+  #img1{
+   background-color: #303183;
+   background-image: url("coach.png");
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size:800px  600px;
+   height: 500px;
+  width: 100%;
+  max-width: 1000px;
+ 
+  
+  }
+ }*/
+
+
+ 
+#banner {
+  height: auto;
+  width: 100%;
+  max-width: 800px;
+  float: left;
+}
+#row2 {
+  margin-top: 100px !important;
+  
+}
+
+#aim {
+  background-color:#98acf8;
+  border: 2px solid #21209c;
+  
+  font-family: Acme;
+}
+#row2 :hover{
+  transition-property: background-color;
+  transition-duration: 1s;
+  cursor:pointer;
+  background-color:  #fffc9b;
+ 
+ 
+}
+
+.first {
+}
+/*Row3----------------------linear-gradient(-45deg, #303183 0%, #303183 100%);----background-image: linear-gradient( -63deg,#a485ff ,#1a1346 50%,#667df3  );----linear-gradient( -63deg,#a485ff ,#1a1346 50%,#667df3  )-----*/
+#row3 {
+   margin-top: 500px !important ;
+  background: linear-gradient( -63deg,#ffeeb8 ,#f9f871 50%,#ffc75f  );
+
+}
+#row3 h1 {
+  color: gray;
+
+  font-family: Fredoka One;
+}
+
+
+#row3 a {
+  font-family: Balsamiq Sans;
+  text-decoration: none;
+  color: #a02a63;
+}
+
+#row3 a :hover {
+  text-decoration: none;
+  color: rgb(56, 8, 56);
+}
+
+#courses {
+  border: solid rgb(7, 4, 4) 5px;
+}
+#frame1 {
+  border: tomato solid 5px;
+  border-radius: 5px;
+}
+#row4{
+
+  background-image: linear-gradient( -352deg,#a4cbec ,#303183 50%,#0088d0  );
+}
+
+
+#row4 a {
+  font-family: Balsamiq Sans;
+  text-decoration: none;
+}
+#row4 a :hover {
+  text-decoration: none;
+  color: rgb(243, 107, 57);
+
+}
+
+#row5 {
+  background-image: linear-gradient( -32deg,#a4cbec,#0088d0 30% ,  #80ffdb );
+
+}
+#row5 a {
+  color: darkgreen;
+  text-decoration: none;
+  font-family: Balsamiq Sans;
+}
+
+#row5 a:hover {
+  text-decoration: none;
+  color: darkgoldenrod;
+}
+#ft{
+  background-color: #323232;
+  
+}
+#ft p{
+  display:inline-block;
+  font-size: smaller;
+  color: white;
+  font-family:'Courier New', Courier, monospace;
+}
+#sm{
+
+  display: inline-block;
+  list-style: none;
+  margin-left: 26px;
+}
+#sm li{
+
+  display: inline-block;
+  padding: 8px;
+  font-size: 15px;
+  
+ 
+}
+
+
+
+#sm li i {
+  
+  border-radius: 50%;
+  border: 1px solid grey;
+  padding: 10px;
+  
+}
+#sm li a{
+  color: white
+}
+#sm :first-child a :hover{
+background-color: wh;
+  color: #cd201f;
+}
+
+
+#sm :nth-child(2) a :hover{
+  
+  color:#e4405f;
+}
+#sm :nth-child(3) a :hover{
+
+  color:#0077B5;
+}
+#sm :last-child a :hover{
+
+  color:#55acee;
+}
+
+
+
+
+
+
+#row3,#row4 p{
+font-size: smaller;
+color: #00af91;
+font-family: 'Do Hyeon';
+font-style: normal;
+
+
+}
+
+
+
+.boxk{
+ 
+  position: relative;
+ 
+  transition: all 0.3s;
+  overflow: hidden;
+    }
+    .boxk img{
+     height: auto;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    
+    }
+    .boxk:hover  img{
+    transform: scale(0);
+    }
+    .boxk .kcontainer{
+      height: 100%;
+      width: 100%;
+      font-size: smaller;
+  color: #1b0517;
+font-family: 'Do Hyeon';
+font-style: normal;
+
+      position:absolute;
+      background-color: #fbe8dac4;
+  
+  box-sizing: border-box;
+  padding: 10px;
+  transform: scale(0) rotate(-180deg) ;
+  transition: all 0.2s;
+  
+    }
+    .boxk:hover .kcontainer{
+  transform: scale(1) rotate(0deg);
+  
+    }

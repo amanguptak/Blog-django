@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+BlogDEtails
+
+
+{%endblock%}
+
+{% block content%}
+<div class="row">
+<div class="col-sm-6">
+<img src="/media/{{blog.blog_image }}" alt="{{blog.blog_title}}" title="{{blog.blog_title}}" width="100%">
+
+
+    
+</div>
+
+
+<div class="col-sm-6">
+<h2 style='font-family: Fredoka One;color: rgb(56, 8, 56);'><b>{{blog.blog_title}}</b></h2>
+<h5 style='font-family: Langar;'>{{blog.publish_date}}</h5>
+
+<h4 style=' font-family: Balsamiq Sans;color: #a02a63;'>Posted by:{{blog.author}}</h4>
+<h5 style='font-family: Langar;'>{{blog.publish_date}}</h5>
+<h5 style='font-family: Langar;'>Update Date:{{blog.update_date}}</h5>
+
+
+</div>
+</div>
+<h4 style="font-family: 'Do Hyeon';"> <p> {{blog.blog_content}} </p></h4>
+
+
+<div class="row">
+
+    <div class="col-sm-6">
+    <h4 style='font-family: Fredoka One;color: #3307f5;'>Comments:</h4>
+{% for comment in blog.blog_comment.all %}
+    <p><a href='#' style='font-family: Balsamiq Sans;
+    text-decoration: none;
+    color: #a02a63;font-size: 25px;'> <b>Commented by:</b> {{comment.user}}</a></p>
+    
+    <h4 style="font-family: 'Do Hyeon'; font-size: 19px;"><p>{{comment.comment}}</p></h4>
+    <br>
+    <h5 style='font-family: Langar;'> {{comment.comment_date}}</h5>
+   
+{% endfor %}
+  </div> 
+    
+    <div class="col-sm-6">
+<form method='POST'>
+{{comment_form|crispy}}
+
+{%csrf_token%}
+<br>
+    <br>
+    <button type="submit" class="btn btn-primary btn-sm">
+     Comment
+    </button>
+    <br>
+    <br>
+    <br>
+    <br>
+</form>
+    </div>
+</div>
+
+{% endblock %}

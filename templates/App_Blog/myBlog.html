@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load custom_filters%}
+{% load crispy_forms_tags %}
+{% block title %}
+MyBlog
+{%endblock%}
+{%block content%}
+{%for blog in user.author_post.all%}
+<h2 style='font-family: Fredoka One;color: rgb(56, 8, 56);'><b>{{blog.blog_title}}</b></h2>
+<h5 style='font-family: Langar;'>{{blog.publish_date}}</h5>
+
+
+<div class="row">
+
+    <div class="col-sm-4">
+<img src="/media/{{ blog.blog_image }}" width="100%">
+</div>
+
+
+<div class="col-sm-7">
+  <b style=' font-family: Balsamiq Sans;'><p>{{blog.blog_content|range_filter|linebreaks}}</p></b>
+   <a href="{%url 'App_Blog:blog_details'  slug=blog.slug%}"
+    style=' font-family: Balsamiq Sans;
+    text-decoration: none;
+    color: #a02a63;font-size: 25px;'> Read More</a>
+</div>
+
+</div>
+<br>
+
+ <a href="{%url 'App_Blog:edit_blog' pk=blog.pk %}" style=' font-family: Balsamiq Sans;
+    text-decoration: none;
+    color: blue;font-size: 20px;'class="btn btn-info btn-sm">Edit</a>
+{%endfor%}
+<br>
+<br>
+<br>
+
+{%endblock%}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+EditBlog
+{%endblock%}
+{%block content%}
+{%if blog.author == user%}
+<form method='POST'enctype="multipart/form-data">
+{{form|crispy}}
+
+{%csrf_token%}
+  
+    <br>
+    <button  style=' font-family: Balsamiq Sans;
+    text-decoration: none;
+    color: blue;' type="submit" class="btn btn-info btn-sm">
+     Update
+    </button>
+    <br>
+    <br>
+    
+{%else%}  
+<p> You are not Allow to view this Page</p>
+{%endif%}
+{%endblock%}

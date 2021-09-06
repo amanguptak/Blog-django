@@ -1,0 +1,176 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AmBLog</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{%static "App_Blog/stylig.css"%}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Langar&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Hanalei+Fill&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Hanalei+Fill&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Fredoka+One&display=swap"
+        rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/4dd1aebf10.js" crossorigin="anonymous"></script>
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+
+</head>
+
+
+  
+ 
+    <title>
+       
+        {% block title%}
+
+        {% endblock%}
+       
+    </title>
+  
+  <body style=' background-image: linear-gradient( -352deg,#c2a9ff  ,#c2a9ff 50%,#c2a9ff );' >
+
+  
+        <div class="container-fluid">
+        <div class="row sticky-top" id="heading">
+         <nav class="navbar navbar-expand-lg ">
+          <a href="{% url 'index'%}" class="navbar-brand mr-md-auto" id="header"> <img src="{%static "App_Blog/logo.png"%}" alt="logo" class="logo ml-md-5">AmBLog</a>
+            
+              <button class="navbar-toggler" data-toggle="collapse" data-target="#navi" id="toggler">
+                    <span class="navbar-toggler-icon">
+
+                    </span>
+                </button>
+         <div class="collapse navbar-collapse  justify-content-end  " id="navi">
+            <ul class="navbar-nav  " id="menu">
+             <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'index'%}">Home</a>
+              </li>
+              
+            {% if user.is_authenticated %}
+             
+             
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'App_login:profile'%}">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'App_Blog:CreateBlog'%}">CreateBLog</a>
+              </li>
+              {% else %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'App_login:signup'%}">SIGN_UP</a>
+              </li>
+               <li class="nav-item">
+                <a class="nav-link" href="{% url 'App_login:signin'%}"><button type="button" class="login">Login</button></a>
+              </li>
+              {%endif %}
+              {% if user.is_authenticated %}
+               
+        
+            
+            <li class="nav-item"><a class="nav-link" href="{% url 'App_login:profile'%}"> {{user.username}}</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'App_Blog:myblog'%}">MyBlog</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'App_login:log_out'%}"><button type="button" class="login">LOGOUT</button></a></li>
+             
+          
+          
+         
+        
+        {%endif %}
+        
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+        <div class="row" id="row1">
+            <div class="col-md-4">
+
+
+                <img src="{% static "App_Blog/landing_page_isometric(1).png"%}" class="try1  mt-1" alt="">
+            </div>
+            <div class="col-md-4 m-auto text-md-center " id="resolve">
+
+
+
+
+
+                <h1 class="  pt-4 pb-2 ">"AmBLog"</h1>
+                <p class="p-5 pt-1">
+
+
+                    Blogging is good for your career. A well-executed blog sets you apart as an expert in your field. 
+                </p>
+
+            </div>
+            <div class="col-md-4">
+
+                <figure class="figure  "></figure>
+                <img src="{%static "App_Blog/Allura - Freelancing.png"%}" class="try2 " alt="">
+            </div>
+</div>
+<div class="container pt-5">
+
+
+    {%block content%}
+
+    {%endblock%}
+ </div>
+ 
+     <footer class="row  " id="ft">
+            <div class="col-md-7  p-md-3  pt-3 mt-md-2 text-center">
+
+                <p> Copyright &copy; 2021 All Rights Reserved by AmBlog.
+
+
+                </p>
+            </div>
+            <div class="col-md-5  p-md-3  text-md-center">
+
+                <ul class="" id="sm">
+
+                    <li> <a href="#"><i class="fab fa-youtube"></i></a></li>
+                    <li> <a href="#"><i class="fab fa-instagram"></i></a></li>
+
+                    <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                </ul>
+
+            </div>
+
+        </footer>
+         </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+  
+  </body>
+</html>
